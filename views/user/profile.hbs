@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<body>
+  <!-- Page Content -->
+  <div class="container">
+
+      <div class="row">
+
+          <!-- Blog Entries Column -->
+          <div class="col-md-8">
+
+              <h2 class="page-header">
+                  My Tickets
+              </h2>
+
+              {{# each assets }}
+
+                <!-- Assets  -->
+                <h3>
+                    Ticket ID: <a href="/ticket/{{ @key }}">{{ @key }}</a>
+                </h3>
+                <h3>Tickets I Own: {{ this }}</h3>
+
+              {{/each}}
+
+          </div>
+
+          <!-- Blog Sidebar Widgets Column -->
+          <div class="col-md-4">
+
+              <!-- Blog Categories Well -->
+              <div class="well">
+                  <h4>My Address: {{ address }}</h4>
+              </div>
+
+          </div>
+
+      </div>
+      <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+</body>

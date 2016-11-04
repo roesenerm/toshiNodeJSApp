@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<body>
+  <!-- Page Content -->
+  <div class="container">
+
+      <!-- Portfolio Item Heading -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">{{ assetName }}
+                  <small>Ticket ID: {{ assetId }}</small>
+              </h1>
+          </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+          <div class="col-md-8">
+              <img class="img-responsive" src="{{ image }}" alt="" height="300" width="300">
+          </div>
+
+          <div class="col-md-4">
+              <h3>Ticket Owner</h3>
+              <p>{{ issuer }}</p>
+              <p>{{ issueAddress }}</p>
+              <h3>Ticket Description</h3>
+              <p>{{ description }}</p>
+              <h3>Ticket Details</h3>
+              <ul>
+                  <li>Price: ${{ price }}</li>
+              </ul>
+
+              <form class="form-horizontal" action="/transfer" method="post">
+                <p><input type="hidden" placeholder="fromAddress" name="fromAddress" value={{ issueAddress }}></p>
+                <p><input type="hidden" placeholder="assetId" name="assetId" value={{ assetId }}></p>
+                <p><input type="hidden" placeholder="price" name="price" value={{ price }}></p>
+                <p><input type="hidden" placeholder="assetName" name="assetName" value={{ assetName }}></p>
+                <p><input type="hidden" placeholder="issuer" name="issuer" value={{ issuer }}></p>
+                <p><input type="hidden" placeholder="description" name="description" value={{ description }}></p>
+                <p><input type="hidden" VALUE="1" SIZE="1" placeholder="1" name="amount" value="1"></p>
+                <p><input class="btn btn-custom" type="submit" value="Buy One Ticket"></p>
+              </form>
+
+          </div>
+
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+  </div>
+  <!-- /.container -->
+</body>

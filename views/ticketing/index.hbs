@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<body>
+  <center>
+    <div class = "container">
+    <h1>Artist Events</h1>
+    <br>
+      <div class = "row">
+        {{# each assets }}
+          <div class = "col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>{{ this.assetName }}</h3>
+                <br>
+                <a href="/ticket/{{this.assetId}}"><img class="img-responsive" src= {{ this.image }} alt="color qrcode" height="300" width="300"></a>
+                <br>
+                <h4>{{ this.description }}</h4>
+                <h4>${{ this.price }}</h4>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </center>
+</body>
