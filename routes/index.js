@@ -129,8 +129,12 @@ router.get('/ticket/:id', function(req, res, next) {
 
 router.post('/ticket/search', function(req, res, next) {
 	var assetId = req.body.assetId;
-	console.log('id:', assetId);
-	res.redirect('/ticket/' + assetId);
+	if (assetId != '') {
+		console.log('id:', assetId);
+		res.redirect('/ticket/' + assetId);
+	} else {
+		res.redirect('/')
+	}
 });
 
 /* Transfer ticket */
