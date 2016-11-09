@@ -31,6 +31,8 @@
                   <li>Price: ${{ price }}</li>
               </ul>
 
+              {{# if login }}
+
               <form class="form-horizontal" action="/transfer" method="post">
                 <p><input type="hidden" placeholder="fromAddress" name="fromAddress" value={{ issueAddress }}></p>
                 <p><input type="hidden" placeholder="assetId" name="assetId" value={{ assetId }}></p>
@@ -41,6 +43,8 @@
                 <p><input type="hidden" VALUE="1" SIZE="1" placeholder="1" name="amount" value="1"></p>
                 <p><input class="btn btn-custom" type="submit" value="Buy One Ticket"></p>
               </form>
+
+              {{/if}}
 
           </div>
 
